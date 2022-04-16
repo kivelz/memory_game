@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "17.0.2",
     "react-native": "0.67.2",
+    "react-redux": "^7.2.8",
     "redux": "^4.1.2",
     "redux-saga": "^1.1.3"
   },
@@ -26,6 +27,21 @@
     "react-test-renderer": "17.0.2"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "collectCoverage": true,
+    "cacheDirectory": "./cache",
+    "coverageReporters": [
+      "lcov"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native(-.*)?|@react-native(-community)?)/)"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 80
+      }
+    },
+    "coverageDirectory": "./__test__/code-coverage",
+    "testEnvironment": "jsdom"
   }
 }
