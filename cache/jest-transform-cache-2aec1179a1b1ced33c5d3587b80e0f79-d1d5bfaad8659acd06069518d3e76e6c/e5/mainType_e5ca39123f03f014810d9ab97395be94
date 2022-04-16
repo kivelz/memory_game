@@ -1,0 +1,106 @@
+9c0264a8ce680aa4d6e8ace4a9fb67c7
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SET_CHECKED_INFO = exports.RESTART_GAME = exports.PRESS_CARD_ITEM = exports.GENERATE_NUMBERS = exports.END_GAME = void 0;
+
+function cov_2awrn22huz() {
+  var path = "/Users/kelvintay/Desktop/MemoryGame/app/redux/types/mainType.js";
+  var hash = "8a6d0b212c5ca57d6a3ecf0248f97ea434718147";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/kelvintay/Desktop/MemoryGame/app/redux/types/mainType.js",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 28
+        },
+        end: {
+          line: 1,
+          column: 42
+        }
+      },
+      "1": {
+        start: {
+          line: 2,
+          column: 32
+        },
+        end: {
+          line: 2,
+          column: 50
+        }
+      },
+      "2": {
+        start: {
+          line: 3,
+          column: 31
+        },
+        end: {
+          line: 3,
+          column: 48
+        }
+      },
+      "3": {
+        start: {
+          line: 4,
+          column: 32
+        },
+        end: {
+          line: 4,
+          column: 50
+        }
+      },
+      "4": {
+        start: {
+          line: 5,
+          column: 24
+        },
+        end: {
+          line: 5,
+          column: 34
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "8a6d0b212c5ca57d6a3ecf0248f97ea434718147"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_2awrn22huz = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2awrn22huz();
+var RESTART_GAME = (cov_2awrn22huz().s[0]++, 'RESTART_GAME');
+exports.RESTART_GAME = RESTART_GAME;
+var GENERATE_NUMBERS = (cov_2awrn22huz().s[1]++, 'GENERATE_NUMBERS');
+exports.GENERATE_NUMBERS = GENERATE_NUMBERS;
+var PRESS_CARD_ITEM = (cov_2awrn22huz().s[2]++, 'PRESS_CARD_ITEM');
+exports.PRESS_CARD_ITEM = PRESS_CARD_ITEM;
+var SET_CHECKED_INFO = (cov_2awrn22huz().s[3]++, 'SET_CHECKED_INFO');
+exports.SET_CHECKED_INFO = SET_CHECKED_INFO;
+var END_GAME = (cov_2awrn22huz().s[4]++, 'END_GAME');
+exports.END_GAME = END_GAME;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW5UeXBlLmpzIl0sIm5hbWVzIjpbIlJFU1RBUlRfR0FNRSIsIkdFTkVSQVRFX05VTUJFUlMiLCJQUkVTU19DQVJEX0lURU0iLCJTRVRfQ0hFQ0tFRF9JTkZPIiwiRU5EX0dBTUUiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBTyxJQUFNQSxZQUFZLDZCQUFHLGNBQUgsQ0FBbEI7O0FBQ0EsSUFBTUMsZ0JBQWdCLDZCQUFHLGtCQUFILENBQXRCOztBQUNBLElBQU1DLGVBQWUsNkJBQUcsaUJBQUgsQ0FBckI7O0FBQ0EsSUFBTUMsZ0JBQWdCLDZCQUFHLGtCQUFILENBQXRCOztBQUNBLElBQU1DLFFBQVEsNkJBQUcsVUFBSCxDQUFkIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IFJFU1RBUlRfR0FNRSA9ICdSRVNUQVJUX0dBTUUnO1xuZXhwb3J0IGNvbnN0IEdFTkVSQVRFX05VTUJFUlMgPSAnR0VORVJBVEVfTlVNQkVSUyc7XG5leHBvcnQgY29uc3QgUFJFU1NfQ0FSRF9JVEVNID0gJ1BSRVNTX0NBUkRfSVRFTSc7XG5leHBvcnQgY29uc3QgU0VUX0NIRUNLRURfSU5GTyA9ICdTRVRfQ0hFQ0tFRF9JTkZPJztcbmV4cG9ydCBjb25zdCBFTkRfR0FNRSA9ICdFTkRfR0FNRSc7Il19

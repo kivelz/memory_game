@@ -1,0 +1,82 @@
+e4a0e70a80291ae75cdc91554359a35b
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SCREEN_WIDTH = exports.SCREEN_HEIGHT = exports.APP_PADDING_HOR_VAL = void 0;
+
+var _reactNative = require("react-native");
+
+function cov_12nhwbfy6i() {
+  var path = "/Users/kelvintay/Desktop/MemoryGame/app/utils/Globals.js";
+  var hash = "697fe6e540d7e31e87e324e7384e711def23e5de";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/kelvintay/Desktop/MemoryGame/app/utils/Globals.js",
+    statementMap: {
+      "0": {
+        start: {
+          line: 5,
+          column: 28
+        },
+        end: {
+          line: 5,
+          column: 58
+        }
+      },
+      "1": {
+        start: {
+          line: 6,
+          column: 29
+        },
+        end: {
+          line: 6,
+          column: 60
+        }
+      },
+      "2": {
+        start: {
+          line: 7,
+          column: 35
+        },
+        end: {
+          line: 7,
+          column: 37
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "697fe6e540d7e31e87e324e7384e711def23e5de"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_12nhwbfy6i = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_12nhwbfy6i();
+var SCREEN_WIDTH = (cov_12nhwbfy6i().s[0]++, _reactNative.Dimensions.get("screen").width);
+exports.SCREEN_WIDTH = SCREEN_WIDTH;
+var SCREEN_HEIGHT = (cov_12nhwbfy6i().s[1]++, _reactNative.Dimensions.get("screen").height);
+exports.SCREEN_HEIGHT = SCREEN_HEIGHT;
+var APP_PADDING_HOR_VAL = (cov_12nhwbfy6i().s[2]++, 16);
+exports.APP_PADDING_HOR_VAL = APP_PADDING_HOR_VAL;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkdsb2JhbHMuanMiXSwibmFtZXMiOlsiU0NSRUVOX1dJRFRIIiwiRGltZW5zaW9ucyIsImdldCIsIndpZHRoIiwiU0NSRUVOX0hFSUdIVCIsImhlaWdodCIsIkFQUF9QQURESU5HX0hPUl9WQUwiXSwibWFwcGluZ3MiOiI7Ozs7O0FBQUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUlPLElBQU1BLFlBQVksNkJBQUdDLHdCQUFXQyxHQUFYLENBQWUsUUFBZixFQUF5QkMsS0FBNUIsQ0FBbEI7O0FBQ0EsSUFBTUMsYUFBYSw2QkFBR0gsd0JBQVdDLEdBQVgsQ0FBZSxRQUFmLEVBQXlCRyxNQUE1QixDQUFuQjs7QUFDQSxJQUFNQyxtQkFBbUIsNkJBQUcsRUFBSCxDQUF6QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XG4gICAgRGltZW5zaW9uc1xufSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuXG5leHBvcnQgY29uc3QgU0NSRUVOX1dJRFRIID0gRGltZW5zaW9ucy5nZXQoXCJzY3JlZW5cIikud2lkdGg7XG5leHBvcnQgY29uc3QgU0NSRUVOX0hFSUdIVCA9IERpbWVuc2lvbnMuZ2V0KFwic2NyZWVuXCIpLmhlaWdodDtcbmV4cG9ydCBjb25zdCBBUFBfUEFERElOR19IT1JfVkFMID0gMTY7Il19

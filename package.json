@@ -29,19 +29,15 @@
   "jest": {
     "preset": "react-native",
     "collectCoverage": true,
-    "cacheDirectory": "./cache",
+
     "coverageReporters": [
       "lcov"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native(-.*)?|@react-native(-community)?)/)"
     ],
-    "coverageThreshold": {
-      "global": {
-        "statements": 80
-      }
-    },
-    "coverageDirectory": "./__test__/code-coverage",
+   
+    "coverageDirectory": "./code-coverage",
     "testEnvironment": "jsdom"
   }
 }
