@@ -1,5 +1,6 @@
 import { getCompareItems, getRandomList, setClickedCount, setCompareItemInfo } from "../../utils/CommonFunctions";
 import { END_GAME, GENERATE_NUMBERS, PRESS_CARD_ITEM, RESTART_GAME, SET_CHECKED_INFO } from "../types/mainType";
+import CARD_PAIRS_VALUE from '../../constants'
 
 const initState = {
     count: 0,
@@ -88,7 +89,9 @@ const mainReducer = (state = initState, action = {}) => {
                 cardItems: [...cdItems]
             }
         case GENERATE_NUMBERS:
-            let randomList = getRandomList(1, 100, 6, 2);
+            let min = CARD_PAIRS_VALUE.MIN_VALUE;
+            let max = CARD_PAIRS_VALUE.MAX_VALUE
+            let randomList = getRandomList(min,max, 6, 2);
             state.cardItems.forEach((subList, row) => {
                 subList.forEach((item, col) => {
                     item.number = randomList[row * subList.length + col]
