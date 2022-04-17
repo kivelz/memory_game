@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.3% </span>
+                <span class="strong">92.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>42/46</span>
+                <span class='fraction'>47/51</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/13</span>
+                <span class='fraction'>12/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.11% </span>
+                <span class="strong">91.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>41/45</span>
+                <span class='fraction'>43/47</span>
             </div>
         
             
@@ -215,13 +215,7 @@
 <a name='L150'></a><a href='#L150'>150</a>
 <a name='L151'></a><a href='#L151'>151</a>
 <a name='L152'></a><a href='#L152'>152</a>
-<a name='L153'></a><a href='#L153'>153</a>
-<a name='L154'></a><a href='#L154'>154</a>
-<a name='L155'></a><a href='#L155'>155</a>
-<a name='L156'></a><a href='#L156'>156</a>
-<a name='L157'></a><a href='#L157'>157</a>
-<a name='L158'></a><a href='#L158'>158</a>
-<a name='L159'></a><a href='#L159'>159</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L153'></a><a href='#L153'>153</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -240,6 +234,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">2x</span>
@@ -368,17 +367,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useEffect } from 'react';
 import {
     View,
@@ -388,7 +376,7 @@ import {
     Alert,
     StyleSheet
 } from 'react-native';
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CardItem from './components/CardItem';
 import Colors from './utils/Colors';
@@ -398,16 +386,21 @@ import { APP_PADDING_HOR_VAL } from './utils/Globals';
 import { onGenerateNumbers, onRestartGame, onSetCheckedInfo } from './redux/actions/mainAction';
 &nbsp;
 const MainScreen = (props) =&gt; {
-&nbsp;
+    const count = useSelector(state =&gt; state.main.count);
+    const cardItems = useSelector(state =&gt; state.main.cardItems);
+    const loading = useSelector(state =&gt; state.main.loading);
+    const isEnded = useSelector(state =&gt; state.main.isEnded);
+    const dispatch = useDispatch();
+   
     useEffect(() =&gt; {
         onPressRestart();
     }, []);
 &nbsp;
     useEffect(() =&gt; {
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (props.isEnded) {
-<span class="cstat-no" title="statement not covered" >            showAlert(props.count);</span>
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (isEnded) {
+<span class="cstat-no" title="statement not covered" >            showAlert(count);</span>
         }
-    }, [props.isEnded])
+    }, [isEnded])
 &nbsp;
     const showAlert = <span class="fstat-no" title="function not covered" >(t</span>otalCount) =&gt; {
 <span class="cstat-no" title="statement not covered" >        Alert.alert(</span>
@@ -423,7 +416,7 @@ const MainScreen = (props) =&gt; {
     }
 &nbsp;
     const onPressRestart = () =&gt; {
-        props.onRestartGame();
+        dispatch(onRestartGame());
     }
 &nbsp;
     const getPaddingVertical = (row_index) =&gt; {
@@ -472,17 +465,17 @@ const MainScreen = (props) =&gt; {
     return (
         &lt;SafeAreaView style={[styles.container]}&gt;
             &lt;View style={[CommonStyles.flex_row_center, styles.headerContainer]}&gt;
-                &lt;TouchableOpacity disabled={props.loading} onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >onPressRestart()}</span>&gt;
+                &lt;TouchableOpacity disabled={loading} onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >onPressRestart()}</span>&gt;
                     &lt;Text style={{ color: Colors.WHITE, fontSize: getResponsiveSize(20) }}&gt;Restart&lt;/Text&gt;
                 &lt;/TouchableOpacity&gt;
                 &lt;View style={[CommonStyles.flex_row_center, { flex: 1, justifyContent: 'flex-end' }]}&gt;
                     &lt;Text style={{ color: Colors.WHITE, fontSize: getResponsiveSize(26) }}&gt;STEPS: &lt;/Text&gt;
-                    &lt;Text style={{ color: Colors.COUNT_COLOR, fontSize: getResponsiveSize(26) }}&gt;{props.count}&lt;/Text&gt;
+                    &lt;Text style={{ color: Colors.COUNT_COLOR, fontSize: getResponsiveSize(26) }}&gt;{count}&lt;/Text&gt;
                 &lt;/View&gt;
             &lt;/View&gt;
             &lt;View style={[styles.cardContainer]}&gt;
                 {
-                    props.cardItems.map((subList, row) =&gt; {
+                    cardItems.map((subList, row) =&gt; {
                         const { paddingTop, paddingBottom } = getPaddingVertical(row);
                         return (
                             &lt;View key={row} style={[CommonStyles.flex_row_center, { flex: 1, paddingTop, paddingBottom }]}&gt;
@@ -526,25 +519,14 @@ const styles = StyleSheet.create({
     }
 });
 &nbsp;
-const mapStateToProps = state =&gt; ({
-    count: state.main.count,
-    cardItems: state.main.cardItems,
-    loading: state.main.loading,
-    isEnded: state.main.isEnded
-});
-&nbsp;
-const mapDispatchToProps = (dispatch) =&gt; (
-    bindActionCreators({ onRestartGame, onGenerateNumbers, onSetCheckedInfo }, dispatch)
-)
-&nbsp;
-export default connect(mapStateToProps, mapDispatchToProps)(MainScreen);</pre></td></tr></table></pre>
+export default MainScreen;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sun Apr 17 2022 12:52:47 GMT+0800 (Singapore Standard Time)
+                at Sun Apr 17 2022 15:15:20 GMT+0800 (Singapore Standard Time)
             </div>
         <script src="prettify.js"></script>
         <script>

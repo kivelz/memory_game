@@ -14,7 +14,7 @@ import { RESTART_GAME,  END_GAME, GENERATE_NUMBERS } from '../app/redux/types/ma
  
 //core functions
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
-jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+
 
 describe("CommonFunctions test", () => {
   //test redux sagas
