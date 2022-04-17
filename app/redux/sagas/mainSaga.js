@@ -49,7 +49,7 @@ function* compareInfo(action) {
     // console.log("unCorrectArr", unCorrectArr);
 
     if (unCorrectArr.length > 0 || correctCardNumbers.length > 0) {
-        yield delay(1200);
+        yield delay(1000);
         yield put(onSetCheckedInfo(unCorrectArr, correctCardNumbers));
     }
 }

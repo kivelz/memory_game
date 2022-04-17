@@ -30,14 +30,18 @@
     "preset": "react-native",
     "collectCoverage": true,
 
-    "coverageReporters": [
-      "lcov"
+    "collectCoverageFrom": [
+      "app/{!(config-ignore-me),}.js"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native(-.*)?|@react-native(-community)?)/)"
     ],
-   
+    "testPathIgnorePatterns": [
+      "app/redux/sagas"
+    ],
+    
     "coverageDirectory": "./code-coverage",
     "testEnvironment": "jsdom"
+    
   }
 }

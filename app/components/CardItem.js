@@ -67,7 +67,7 @@ const CardItem = (props) => {
         if (checkContains(props.row, props.com)) {
             return;
         }
-
+       
         setIsDisabled(true);
 
         let clickedCount = getClickedCount();
