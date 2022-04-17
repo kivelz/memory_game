@@ -7,7 +7,7 @@ import {
     Alert,
     StyleSheet
 } from 'react-native';
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CardItem from './components/CardItem';
 import Colors from './utils/Colors';
@@ -17,16 +17,21 @@ import { APP_PADDING_HOR_VAL } from './utils/Globals';
 import { onGenerateNumbers, onRestartGame, onSetCheckedInfo } from './redux/actions/mainAction';
 
 const MainScreen = (props) => {
-
+    const count = useSelector(state => state.main.count);
+    const cardItems = useSelector(state => state.main.cardItems);
+    const loading = useSelector(state => state.main.loading);
+    const isEnded = useSelector(state => state.main.isEnded);
+    const dispatch = useDispatch();
+   
     useEffect(() => {
         onPressRestart();
     }, []);
 
     useEffect(() => {
-        if (props.isEnded) {
-            showAlert(props.count);
+        if (isEnded) {
+            showAlert(count);
         }
-    }, [props.isEnded])
+    }, [isEnded])
 
     const showAlert = (totalCount) => {
         Alert.alert(
@@ -42,7 +47,7 @@ const MainScreen = (props) => {
     }
 
     const onPressRestart = () => {
-        props.onRestartGame();
+        dispatch(onRestartGame());
     }
 
     const getPaddingVertical = (row_index) => {
@@ -91,17 +96,17 @@ const MainScreen = (props) => {
     return (
         <SafeAreaView style={[styles.container]}>
             <View style={[CommonStyles.flex_row_center, styles.headerContainer]}>
-                <TouchableOpacity disabled={props.loading} onPress={() => onPressRestart()}>
+                <TouchableOpacity disabled={loading} onPress={() => onPressRestart()}>
                     <Text style={{ color: Colors.WHITE, fontSize: getResponsiveSize(20) }}>Restart</Text>
                 </TouchableOpacity>
                 <View style={[CommonStyles.flex_row_center, { flex: 1, justifyContent: 'flex-end' }]}>
                     <Text style={{ color: Colors.WHITE, fontSize: getResponsiveSize(26) }}>STEPS: </Text>
-                    <Text style={{ color: Colors.COUNT_COLOR, fontSize: getResponsiveSize(26) }}>{props.count}</Text>
+                    <Text style={{ color: Colors.COUNT_COLOR, fontSize: getResponsiveSize(26) }}>{count}</Text>
                 </View>
             </View>
             <View style={[styles.cardContainer]}>
                 {
-                    props.cardItems.map((subList, row) => {
+                    cardItems.map((subList, row) => {
                         const { paddingTop, paddingBottom } = getPaddingVertical(row);
                         return (
                             <View key={row} style={[CommonStyles.flex_row_center, { flex: 1, paddingTop, paddingBottom }]}>
@@ -145,15 +150,4 @@ const styles = StyleSheet.create({
     }
 });
 
-const mapStateToProps = state => ({
-    count: state.main.count,
-    cardItems: state.main.cardItems,
-    loading: state.main.loading,
-    isEnded: state.main.isEnded
-});
-
-const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({ onRestartGame, onGenerateNumbers, onSetCheckedInfo }, dispatch)
-)
-
-export default connect(mapStateToProps, mapDispatchToProps)(MainScreen);
+export default MainScreen;

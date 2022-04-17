@@ -6,7 +6,7 @@ import {
     Easing,
     StyleSheet
 } from 'react-native';
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import Colors from '../utils/Colors';
 import { addCompareItem, checkContains, getClickedCount, getResponsiveSize } from '../utils/CommonFunctions';
 import { APP_PADDING_HOR_VAL } from '../utils/Globals';
@@ -16,9 +16,10 @@ import { bindActionCreators } from 'redux';
 
 const CardItem = (props) => {
     const [rotateVal] = useState(new Animated.Value(0));
-
     const [isDisabled, setIsDisabled] = useState(false);
     const [isShowFace, setIsShowFace] = useState(false);
+    const dispatch = useDispatch();
+    const loading = useSelector(state => state.main.loading);
 
     useEffect(() => {
         if (props.showFace) {
@@ -62,7 +63,7 @@ const CardItem = (props) => {
 
     }, [props.showFace]);
 
-    const onPressCardItem = () => {
+    const onPressCardItems = () => {
 
         if (checkContains(props.row, props.com)) {
             return;
@@ -73,7 +74,7 @@ const CardItem = (props) => {
         let clickedCount = getClickedCount();
 
         addCompareItem({ row: props.row, col: props.col, number: props.number, clickedCount });
-        props.onPressCardItem(props.row, props.col);
+        dispatch(onPressCardItem(props.row, props.col));
     }
 
     return (
@@ -86,8 +87,8 @@ const CardItem = (props) => {
             }]
         }]}>
             <TouchableOpacity
-                disabled={props.loading || isDisabled || props.showFace}
-                onPress={() => onPressCardItem(props.row, props.col)}
+                disabled={loading || isDisabled || props.showFace}
+                onPress={() => onPressCardItems(props.row, props.col)}
                 style={[styles.subContainer, isShowFace ? styles.faceContainer : styles.backContainer]}>
                 {
                     isShowFace ?
@@ -143,12 +144,6 @@ const styles = StyleSheet.create({
     }
 });
 
-const mapStateToProps = state => ({
-    loading: state.main.loading
-});
 
-const mapDispatchToProps = (dispatch) => (
-    bindActionCreators({ onPressCardItem }, dispatch)
-)
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardItem);
+export default CardItem;
