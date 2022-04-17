@@ -14,8 +14,10 @@ import { watchEndGameInfo, compareInfo, endGameInfo } from '../../MemoryGame/app
  import { RESTART_GAME, PRESS_CARD_ITEM, END_GAME, GENERATE_NUMBERS, SET_CHECKED_INFO } from '../app/redux/types/mainType';
 import CardItem from '../app/components/CardItem';
  
-
+//core functions
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+
 describe("CommonFunctions test", () => {
   //test redux sagas
    it("getRandomList function -> should be 12 integer random list", () => {
