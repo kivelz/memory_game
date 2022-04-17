@@ -36,10 +36,7 @@
     "transformIgnorePatterns": [
       "node_modules/(?!((jest-)?react-native(-.*)?|@react-native(-community)?)/)"
     ],
-    "testPathIgnorePatterns": [
-      "app/redux/sagas"
-    ],
-    
+ 
     "coverageDirectory": "./code-coverage",
     "testEnvironment": "jsdom"
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1650170845643" clover="3.2.0">
-  <project timestamp="1650170845643" name="All files">
+<coverage generated="1650171167163" clover="3.2.0">
+  <project timestamp="1650171167163" name="All files">
     <metrics statements="45" coveredstatements="41" conditionals="12" coveredconditionals="11" methods="13" coveredmethods="10" elements="70" coveredelements="62" complexity="0" loc="45" ncloc="45" packages="1" files="1" classes="1"/>
     <file name="MainScreen.js" path="/Users/kelvintay/Desktop/MemoryGame/app/MainScreen.js">
       <metrics statements="45" coveredstatements="41" conditionals="12" coveredconditionals="11" methods="13" coveredmethods="10"/>
