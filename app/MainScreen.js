@@ -122,7 +122,6 @@ const MainScreen = (props) => {
                                 }
                             </View>
                         )
-
                     })
                 }
             </View>
