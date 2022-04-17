@@ -6,13 +6,11 @@
  // Note: test renderer must be required after react-native.
 import React from 'react';
 import App from '../App';
-import { runSaga } from 'redux-saga';
 import TestRenderer from 'react-test-renderer';
-import { watchEndGameInfo, compareInfo, endGameInfo } from '../../MemoryGame/app/redux/sagas/mainSaga';
- import { addCompareItem, checkContains, deleteCompareItem, getClickedCount, getCompareItemInfo, getRandomList, generateNumbers, setClickedCount, setCompareItemInfo } from '../app/utils/CommonFunctions';
- import mainReducer from '../app/redux/reducers/mainReducer';
- import { RESTART_GAME, PRESS_CARD_ITEM, END_GAME, GENERATE_NUMBERS, SET_CHECKED_INFO } from '../app/redux/types/mainType';
-import CardItem from '../app/components/CardItem';
+import { addCompareItem, checkContains, deleteCompareItem, getClickedCount, getCompareItemInfo, getRandomList, generateNumbers, setClickedCount, setCompareItemInfo } from '../app/utils/CommonFunctions';
+import mainReducer from '../app/redux/reducers/mainReducer';
+import { RESTART_GAME,  END_GAME, GENERATE_NUMBERS } from '../app/redux/types/mainType';
+
  
 //core functions
 jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
